@@ -1,0 +1,67 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Spam Classifier</title>
+  </head>
+  <body>
+  
+    
+
+  {% block content%}
+  {% endblock %}
+    {% comment %} <script>
+      var home = document.getElementById("home");
+      var predict = document.getElementById("predict");
+      var historyy = document.getElementById("historyy");
+
+      console.log(historyy);
+
+      var nav1 = document.getElementById("nav1");
+      var nav2 = document.getElementById("nav2");
+      var nav3 = document.getElementById("nav3");
+
+      function btnnav1() {
+        home.classList.remove("display");
+        predict.classList.add("display");
+        historyy.classList.add("display");
+
+        nav1.classList.add("clicked");
+        nav2.classList.remove("clicked");
+        nav3.classList.remove("clicked");
+      }
+
+      function btnnav2() {
+        home.classList.add("display");
+        predict.classList.remove("display");
+        historyy.classList.add("display");
+
+        nav1.classList.remove("clicked");
+        nav2.classList.add("clicked");
+        nav3.classList.remove("clicked");
+      }
+
+      function btnnav3() {
+        home.classList.add("display");
+        predict.classList.add("display");
+        historyy.classList.remove("display");
+
+        nav1.classList.remove("clicked");
+        nav2.classList.remove("clicked");
+        nav3.classList.add("clicked");
+      }
+    </script> {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<header>
+      <nav>
+        <ul>
+          <li>
+          <form action="{% url 'home' %}">
+            <button id="nav1" onclick="">Home</button>
+          </form>
+          </li>
+          <li><form action="{% url 'predict' %}">
+            <button id="nav2" class="clicked" onclick="">Predict</button>
+          </form></li>
+          <li><form action="{% url 'history' %}">
+            <button id="nav3"  onclick="btnnav1()">History</button>
+          </form></li>
+        </ul>
+      </nav>
+      {% comment %} <button class="about">About</button> {% endcomment %}
+</header>
+
+
+    <section class="predict" id="">
+      <div class="left">
+        <h1>Enter Text to</h1>
+        <h2>Predict</h2>
+        <br/>
+        <br/> 
+        {% if result%}
+        {% if result == "ham"%}
+        <h2 id="ham" class='border text-center' >{{result | upper }}</h2>
+        {% else %}
+        <h2 id="spam" class='border text-center'  >{{result | upper }}</h2>
+        {% endif %}
+        {% endif %}
+        
+      </div>
+      <div class="right">
+        <form method="POST" action="{% url 'predict' %}">
+        {% csrf_token %} 
+          <h5>*Combined - Random Forest , Logistic Regression, MLPClassifier, FunctionTransformer </h4>
+          <textarea style="width: 100%; height: 300px" name="data" required >{{data}}</textarea>
+          <div>
+            <button>Predict</button>
+            
+            <select name="model_type" >
+              <option value="SMS">SMS</option>
+              <option value="YOUTUBE" >YOUTUBE</option>
+              <option value="EMAIL" >EMAIL</option>
+              <option selected >SELECT TYPE</option>
+            </select>
+
+            
+            
+            <select name="model_name">
+              <option>Combined*</option>
+              <option>CNN-LSTM</option>
+              <option selected >SELECT MODEL</option>
+            </select>
+          </div>
+        </form>
+        <form action="{% url 'predict' %}">
+        <br/>
+        <button>Clear From</button>
+        </form>
+      </div>
+    </section>
+
+{%endblock%}

@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+body {
+  /* background-image: url("https://media.istockphoto.com/vectors/abstract-technology-background-with-curve-overlapped-geometric-shape-vector-id1181899947?k=20&m=1181899947&s=612x612&w=0&h=muTcTM4_USaXUcWc-e3NANeJ66ZSvBS_mByBDZ2s7lQ=");
+  background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  background-color: #fbfcf4;
+  width: 100%;
+}
+
+nav {
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+  margin-right: 40px;
+}
+
+nav ul li button {
+  background-color: transparent;
+  border: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#ham{
+  color: green;
+  font-size: 36px;
+
+  
+
+
+}
+
+#spam{
+  color:red;
+  font-size: 36px;
+
+}
+
+nav ul li button:hover {
+  color: #ff8658;
+}
+
+header button.about {
+  height: 30px;
+  width: 100px;
+  background-color: transparent;
+  border: 1px solid #2d2d2b;
+  border-radius: 7px;
+  margin: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+header button.about:hover {
+  background-color: #2d2d2b;
+  color: #f9f9f9;
+  cursor: pointer;
+}
+
+.clicked {
+  color: #ff8658;
+  border-bottom: 1px solid #ff8658;
+}
+
+.home,
+.predict,
+.history {
+  height: 100vh;
+  margin-top: 10%;
+  margin-left: 50px;
+}
+
+.home h1,
+.predict .left h1,
+.history .left h1 {
+  font-size: 4rem;
+  font-weight: lighter;
+  letter-spacing: 5px;
+  color: #2d2d2b;
+  margin: 0;
+}
+
+.home h2,
+.predict .left h2,
+.history .left h2 {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.home p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d2d2b;
+  letter-spacing: 1.5px;
+  width: 270px;
+}
+
+.home button,
+.predict .left button,
+.predict .right button,
+.predict select,
+.history .left button {
+  background-color: #2d2d2b;
+  color: #f9f9f9;
+  padding: 17px 35px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.75);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  border: 2px solid #2d2d2b;
+}
+
+.home button:hover,
+.predict .right button:hover,
+.history .left button:hover {
+  background-color: transparent;
+  color: #2d2d2b;
+  cursor: pointer;
+}
+
+.predict,
+.history {
+  display: flex;
+}
+
+.predict .left button {
+  background-color: #b20000;
+  border: 2px solid #b20000;
+  margin-top: 120px;
+}
+
+.predict .left button:hover {
+  background-color: transparent;
+  color: #b20000;
+}
+
+.predict .right,
+.history .right {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.predict .right textarea {
+  resize: none;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ff8658;
+  padding: 20px;
+}
+
+.predict .right textarea:focus {
+  outline: none;
+  border: 1px solid #b20000;
+  box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.75);
+}
+
+.predict select {
+  background-color: #fff;
+  color: #2d2d2b;
+}
+
+.predict option {
+ 
+  width: 10px;
+
+}
+
+.history .left button {
+  margin-top: 30px;
+}
+
+.history table {
+  margin: 0 auto;
+  background-color: #ddd;
+}
+
+.history table th {
+  padding: 10px 20px;
+  background-color: #818392;
+}
+
+.history table td {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+}
+
+.history table tr:nth-child(even) {
+  background-color: #f9fafc;
+}
+
+.history table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.display {
+  display: none;
+}

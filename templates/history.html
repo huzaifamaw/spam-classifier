@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<header>
+      <nav>
+        <ul>
+          <li>
+          <form action="{% url 'home' %}">
+            <button id="nav1" onclick="">Home</button>
+          </form>
+          </li>
+          <li><form action="{% url 'predict' %}">
+            <button id="nav2" onclick="">Predict</button>
+          </form></li>
+          <li><form action="{% url 'history' %}">
+            <button id="nav3" class="clicked" onclick="btnnav1()">History</button>
+          </form></li>
+        </ul>
+      </nav>
+      {% comment %} <button class="about">About</button> {% endcomment %}
+</header>
+<section class="history">
+      <div class="left">
+        <h1>History of</h1>
+        <h2>Prediction</h2>
+        <form action="{% url 'predict' %}">
+      <button>Make New Prediction</button>
+      </form>
+      </div>
+      <div class="right">
+        <table>
+          <tr>
+            <th></th>
+            <th>Spam or Not</th>
+            <th>Text</th>
+            <th>Model</th>
+          </tr>
+          
+          {% for data in history %}
+          
+          <tr>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{data.id}}"><i class="fa fa-chevron-right" aria-hidden="true"></i></button></td>
+            <td>{{data.result | upper}}</td>
+            <td>{{data.text | slice:"100"}}</td>
+            <td>{{data.model}}</td>
+            {% include 'includes/modal.html' with data=data %}
+          </tr>
+          
+          {%endfor%}
+          
+        </table>
+      </div>
+    </section>
+{%endblock%}

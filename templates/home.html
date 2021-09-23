@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<header>
+      <nav>
+        <ul>
+          <li>
+          <form action="{% url 'home' %}">
+            <button id="nav1" class="clicked" onclick="">Home</button>
+          </form>
+          </li>
+          <li><form action="{% url 'predict' %}">
+            <button id="nav2" onclick="">Predict</button>
+          </form></li>
+          <li><form action="{% url 'history' %}">
+            <button id="nav3"  onclick="btnnav1()">History</button>
+          </form></li>
+        </ul>
+      </nav>
+      {% comment %} <button class="about">About</button> {% endcomment %}
+</header>
+
+    <div class="home" id="home">
+      <h1>SPAM</h1>
+      <h2>CLASSIFIER</h2>
+      <p>Using Different and Popular Statistical techniques</p>
+      <form action="{% url 'predict' %}">
+      <button>Make Prediction</button>
+      </form>
+    </div>
+
+    
+{%endblock%}

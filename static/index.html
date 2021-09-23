@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Spam Classifier</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <button class="clicked" id="nav1" onclick="btnnav1()">Home</button>
+          </li>
+          <li><button id="nav2" onclick="btnnav2()">Predict</button></li>
+          <li><button id="nav3" onclick="btnnav3()">History</button></li>
+        </ul>
+      </nav>
+      <button class="about">About</button>
+    </header>
+
+    <div class="home" id="home">
+      <h1>SPAM</h1>
+      <h2>CLASSIFIER</h2>
+      <p>Using Different and Popular Statistical techniques</p>
+      <button>Make Prediction</button>
+    </div>
+
+    <section class="predict display" id="predict">
+      <div class="left">
+        <h1>Enter Text to</h1>
+        <h2>Predict</h2>
+        <button>SPAM DETECTED</button>
+      </div>
+      <div class="right">
+        <form>
+          <textarea style="width: 100%; height: 300px"></textarea>
+          <div>
+            <button>Make Prediction</button>
+            <select>
+              <option>Model</option>
+              <option>Model</option>
+              <option>Model</option>
+              <option>Model</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="history display" id="historyy">
+      <div class="left">
+        <h1>History of</h1>
+        <h2>Prediction</h2>
+        <button>Make New Prediction</button>
+      </div>
+      <div class="right">
+        <table>
+          <tr>
+            <th></th>
+            <th>Spam or Not</th>
+            <th>Text</th>
+          </tr>
+          <tr>
+            <td><i class="fa fa-chevron-down" aria-hidden="true"></i></td>
+            <td>SPAM</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-chevron-down" aria-hidden="true"></i></td>
+            <td>HAM</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-chevron-down" aria-hidden="true"></i></td>
+            <td>SPAM</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-chevron-down" aria-hidden="true"></i></td>
+            <td>HAM</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      var home = document.getElementById("home");
+      var predict = document.getElementById("predict");
+      var historyy = document.getElementById("historyy");
+
+      console.log(historyy);
+
+      var nav1 = document.getElementById("nav1");
+      var nav2 = document.getElementById("nav2");
+      var nav3 = document.getElementById("nav3");
+
+      function btnnav1() {
+        home.classList.remove("display");
+        predict.classList.add("display");
+        historyy.classList.add("display");
+
+        nav1.classList.add("clicked");
+        nav2.classList.remove("clicked");
+        nav3.classList.remove("clicked");
+      }
+
+      function btnnav2() {
+        home.classList.add("display");
+        predict.classList.remove("display");
+        historyy.classList.add("display");
+
+        nav1.classList.remove("clicked");
+        nav2.classList.add("clicked");
+        nav3.classList.remove("clicked");
+      }
+
+      function btnnav3() {
+        home.classList.add("display");
+        predict.classList.add("display");
+        historyy.classList.remove("display");
+
+        nav1.classList.remove("clicked");
+        nav2.classList.remove("clicked");
+        nav3.classList.add("clicked");
+      }
+    </script>
+  </body>
+</html>
